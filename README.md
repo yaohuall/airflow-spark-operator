@@ -6,3 +6,7 @@ Running Apache Airflow SparkKubernetesOperator on K8s
 ### Need to update
 
 ### Framework version
+- Apache Spark image: v3.3.3
+
+### How to use this repo?
+#### Wrap up your Pyspark code in image and upload to docker hub
