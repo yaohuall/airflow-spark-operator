@@ -8,5 +8,11 @@ Running Apache Airflow SparkKubernetesOperator on K8s
 ### Framework version
 - Apache Spark image: v3.3.3
 
+### File tree
+- dags
+  - scripts
+  - pyspark-example.yaml
+
 ### How to use this repo?
-#### Wrap up your Pyspark code in image and upload to docker hub
+- Wrap up your Pyspark code in image and upload to docker hub.
+- Specify your image in your deploy yaml file.
