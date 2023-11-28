@@ -1,0 +1,41 @@
+apiVersion: "sparkoperator.k8s.io/v1beta2"
+kind: SparkApplication
+metadata:
+  name: pyspark-example
+  namespace: spark-operator
+spec:
+  type: Python
+  pythonVersion: "3"
+  mode: cluster
+  image: "<your-pyspark-image>"
+  imagePullPolicy: IfNotPresent
+  # Specify file location in your image
+  # exmaple: local:///opt/spark/examples/src/main/python/example.py
+  mainApplicationFile: "<file-path-in-image>"
+  sparkVersion: "<Spark-version>"
+  restartPolicy:
+    type: Never
+#    onFailureRetries: 1
+#    onFailureRetryInterval: 10
+#    onSubmissionFailureRetries: 5
+#    onSubmissionFailureRetryInterval: 20
+  driver:
+    cores: 4
+    memory: "8g"
+#    labels:
+#      version: 3.3.3
+    serviceAccount: "<your-spark-sa>"
+    envSecretKeyRefs:
+          EXAMPLE_PARAM:
+            name: param_name
+            key: param_key
+  executor:
+    cores: 2
+    instances: 2
+    memory: "8g"
+#    labels:
+#      version: 3.3.3
+    envSecretKeyRefs:
+      EXAMPLE_PARAM:
+        name: param_name
+        key: param_key
