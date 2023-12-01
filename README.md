@@ -6,6 +6,7 @@ Running Apache Airflow SparkKubernetesOperator on K8s
 ### Need to update
 
 ### Framework version
+- Helm Spark-operator: v1.2.27, app version: v1beta2-1.3.8-3.1.1
 - Apache Spark image: v3.3.3
 
 ### File tree
